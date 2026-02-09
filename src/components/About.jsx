@@ -10,7 +10,7 @@ const About = () => {
     const steps = 60;
     const interval = duration / steps;
 
-    const targets = { experience: 2, projects: 2, clients: 50 };
+    const targets = { experience: 2, projects: 3, clients: 50 };
     let step = 0;
 
     const timer = setInterval(() => {
