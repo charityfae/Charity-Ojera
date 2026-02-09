@@ -21,6 +21,12 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'Amorena - Luxury Floral & Event Planning',
+      description: 'Premium e-commerce website for luxury floral arrangements and event planning. Features cinematic animations, video hero section, interactive gallery with filtering (40+ images), and WhatsApp booking integration.',
+      tech: ['React', 'Tailwind CSS', 'Framer Motion', 'AOS', 'React Router'],
+      media: { type: 'carousel', images: ['./images/pic1.png', './images/pic2.png', './images/pic3.png'] },
+    },
+    {
       title: 'FundEzer Healthcare Platform',
       description: 'AI-powered platform for healthcare crowdfunding. Built with React and Vite, featuring campaign management, payment integration, and real-time donor updates.',
       tech: ['React', 'Vite', 'REST APIs', 'Payment Gateway'],
@@ -117,7 +123,7 @@ const Projects = () => {
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, j) => (
                     <span 
                       key={j}
@@ -127,6 +133,31 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                
+                {(project.github || project.live) && (
+                  <div className="flex gap-3 mt-4">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white text-xs rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-primary text-gray-900 text-xs rounded-lg hover:bg-primary/80 transition-colors"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
