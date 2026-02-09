@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { FaReact, FaNodeJs, FaPython, FaVuejs, FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaVuejs, FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiJavascript, SiVite, SiFigma, SiCanva, SiVisualstudio } from 'react-icons/si';
 
 const Skills = () => {
