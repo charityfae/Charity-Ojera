@@ -22,12 +22,12 @@ const Navbar = () => {
         scrolled ? 'glass shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex justify-between items-center">
           <motion.a
             href="#home"
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold gradient-text"
+            className="text-xl sm:text-2xl font-bold gradient-text"
           >
             Charity
           </motion.a>
@@ -38,7 +38,7 @@ const Navbar = () => {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 whileHover={{ scale: 1.1 }}
-                className="text-gray-300 hover:text-primary transition-colors font-medium"
+                className="text-gray-300 hover:text-primary transition-colors font-medium text-sm sm:text-base"
               >
                 {item}
               </motion.a>
@@ -47,7 +47,7 @@ const Navbar = () => {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-2xl text-primary"
+            className="md:hidden text-xl sm:text-2xl text-primary"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -64,7 +64,7 @@ const Navbar = () => {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setIsOpen(false)}
-                className="block py-2 text-gray-300 hover:text-primary transition-colors"
+                className="block py-2 text-sm sm:text-base text-gray-300 hover:text-primary transition-colors"
               >
                 {item}
               </a>

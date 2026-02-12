@@ -55,7 +55,7 @@ const Projects = () => {
           <p className="text-gray-600 dark:text-gray-400 font-mono">{"Building the future, one project at a time"}</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={i}
@@ -64,7 +64,7 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.2 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="glass p-6 group relative overflow-hidden"
+              className="glass p-4 sm:p-6 group relative overflow-hidden w-full"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               
@@ -88,13 +88,13 @@ const Projects = () => {
                     />
                     <button
                       onClick={() => prevImage(i, project.media.images.length)}
-                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover/carousel:opacity-100 transition-opacity"
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-100 md:opacity-0 md:group-hover/carousel:opacity-100 transition-opacity"
                     >
                       <FaChevronLeft />
                     </button>
                     <button
                       onClick={() => nextImage(i, project.media.images.length)}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover/carousel:opacity-100 transition-opacity"
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-100 md:opacity-0 md:group-hover/carousel:opacity-100 transition-opacity"
                     >
                       <FaChevronRight />
                     </button>
@@ -117,9 +117,9 @@ const Projects = () => {
                   />
                 )}
                 
-                <h3 className="text-xl font-bold text-primary mb-4">{project.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-primary mb-3 sm:mb-4">{project.title}</h3>
                 
-                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed">
                   {project.description}
                 </p>
                 

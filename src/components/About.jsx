@@ -43,25 +43,25 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="gradient-text">About Me</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 font-mono">{"Passionate about creating exceptional digital experiences"}</p>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-mono">{"Passionate about creating exceptional digital experiences"}</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
               I'm a dedicated Frontend and Full-Stack Developer with a keen eye for design. 
               I've been crafting digital solutions that not only function flawlessly but also 
               provide exceptional user experiences.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
               My journey combines the technical precision of software development with the 
               creative intuition of UI/UX design. I believe that great applications are born 
               from the perfect marriage of functionality and aesthetics.
@@ -72,18 +72,18 @@ const About = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-3 gap-4"
+            className="grid grid-cols-3 gap-2 sm:gap-4"
           >
             {[
               { label: 'Years Experience', value: counts.experience, suffix: '+' },
               { label: 'Projects Completed', value: counts.projects, suffix: '+' },
               { label: 'Happy Clients', value: counts.clients, suffix: '+' },
             ].map((stat, i) => (
-              <div key={i} className="glass p-6 text-center">
-                <div className="text-3xl font-bold gradient-text mb-2">
+              <div key={i} className="glass p-3 sm:p-4 md:p-6 text-center">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text mb-1 sm:mb-2">
                   {stat.value}{stat.suffix}
                 </div>
-                <div className="text-xs text-gray-600 dark:text-gray-400">{stat.label}</div>
+                <div className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -95,8 +95,8 @@ const About = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h3 className="text-2xl font-bold text-center mb-8 gradient-text">What I Do</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8 gradient-text">What I Do</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {services.map((service, i) => (
               <motion.div
                 key={i}
@@ -105,11 +105,11 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="glass p-6 text-center"
+                className="glass p-4 sm:p-6 text-center"
               >
-                <service.Icon className="text-4xl text-primary mx-auto mb-4" />
-                <h4 className="font-bold mb-2 text-gray-900 dark:text-white">{service.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{service.desc}</p>
+                <service.Icon className="text-3xl sm:text-4xl text-primary mx-auto mb-3 sm:mb-4" />
+                <h4 className="font-bold mb-2 text-sm sm:text-base text-gray-900 dark:text-white">{service.title}</h4>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{service.desc}</p>
               </motion.div>
             ))}
           </div>

@@ -37,23 +37,23 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="gradient-text">Tech Stack</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 font-mono">{" Technologies I work with"}</p>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-mono">{" Technologies I work with"}</p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12"
         >
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+              className={`px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-semibold transition-all text-sm sm:text-base ${
                 activeCategory === cat
                   ? 'bg-gradient-to-r from-primary to-secondary text-white'
                   : 'glass hover:bg-white/10'
@@ -64,7 +64,7 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6">
           {filteredSkills.map((skill, i) => (
             <motion.div
               key={skill.name}
@@ -73,13 +73,13 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -10, scale: 1.05 }}
-              className="glass p-6 text-center group cursor-pointer"
+              className="glass p-4 sm:p-6 text-center group cursor-pointer"
             >
               <skill.Icon 
-                className="text-5xl mx-auto mb-4 transition-all duration-300 group-hover:scale-110" 
+                className="text-4xl sm:text-5xl mx-auto mb-3 sm:mb-4 transition-all duration-300 group-hover:scale-110" 
                 style={{ color: skill.color }}
               />
-              <h3 className="font-semibold text-gray-900 dark:text-gray-200">{skill.name}</h3>
+              <h3 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-200">{skill.name}</h3>
             </motion.div>
           ))}
         </div>

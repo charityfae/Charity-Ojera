@@ -35,14 +35,14 @@ const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="gradient-text">Experience</span>
           </h2>
-          <p className="text-gray-400 font-mono">{"// My professional journey"}</p>
+          <p className="text-sm sm:text-base text-gray-400 font-mono">{"// My professional journey"}</p>
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary" />
+          <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary" />
           
           {timeline.map((item, i) => (
             <motion.div
@@ -51,22 +51,22 @@ const Experience = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2 }}
-              className="relative pl-20 pb-12"
+              className="relative pl-12 sm:pl-20 pb-8 sm:pb-12"
             >
-              <div className="absolute left-5 top-0 w-6 h-6 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                {item.type === 'work' ? <FaBriefcase className="text-xs" /> : <FaGraduationCap className="text-xs" />}
+              <div className="absolute left-2.5 sm:left-5 top-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                {item.type === 'work' ? <FaBriefcase className="text-[8px] sm:text-xs" /> : <FaGraduationCap className="text-[8px] sm:text-xs" />}
               </div>
               
               <motion.div 
                 whileHover={{ scale: 1.02 }}
-                className="glass p-6"
+                className="glass p-4 sm:p-6"
               >
-                <div className="flex flex-wrap justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-primary">{item.title}</h3>
-                  <span className="text-sm text-gray-400 font-mono">{item.period}</span>
+                <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-start mb-2 gap-1 sm:gap-0">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-primary">{item.title}</h3>
+                  <span className="text-xs sm:text-sm text-gray-400 font-mono">{item.period}</span>
                 </div>
-                <p className="text-secondary font-semibold mb-3">{item.company}</p>
-                <p className="text-gray-400 text-sm">{item.description}</p>
+                <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">{item.company}</p>
+                <p className="text-gray-400 text-xs sm:text-sm">{item.description}</p>
               </motion.div>
             </motion.div>
           ))}
